@@ -1,0 +1,52 @@
+REM
+REM JDX (version: 05.05) reverse engineered config file
+REM JDX is a product of Software Tree, LLC.
+REM Date: Thu Aug 07 13:39:20 PDT 2025
+REM
+
+JDX_DATABASE JDX:jdbc:mysql://localhost:3306/sakila;USER=dperiwal;PASSWORD=secretOne;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
+JDBC_DRIVER com.mysql.jdbc.Driver
+JDX_OBJECT_MODEL_PACKAGE com.softwaretree.jdxmysqlsakilaexample.reversed.json.model
+JDX_SUPERCLASS_NAME com.softwaretree.jdx.JDX_JSONObject
+JDX_GENERATE_ACCESSOR_METHODS FALSE
+JDX_GENERATE_JSON_MAPPINGS TRUE
+;
+CLASS .Film TABLE film
+    VIRTUAL_ATTRIB release_year ATTRIB_TYPE java.util.Date
+    VIRTUAL_ATTRIB original_language_id ATTRIB_TYPE java.lang.Short
+    VIRTUAL_ATTRIB replacement_cost ATTRIB_TYPE java.math.BigDecimal
+    VIRTUAL_ATTRIB length ATTRIB_TYPE java.lang.Short
+    VIRTUAL_ATTRIB rental_duration ATTRIB_TYPE short
+    VIRTUAL_ATTRIB rating ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB last_update ATTRIB_TYPE java.sql.Timestamp
+    VIRTUAL_ATTRIB language_id ATTRIB_TYPE short
+    VIRTUAL_ATTRIB film_id ATTRIB_TYPE short
+    VIRTUAL_ATTRIB rental_rate ATTRIB_TYPE java.math.BigDecimal
+    VIRTUAL_ATTRIB title ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB description ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB special_features ATTRIB_TYPE java.lang.String
+    PRIMARY_KEY film_id 
+    RELATIONSHIP listFilm_Category REFERENCES .ListFilm_Category BYVALUE WITH film_id 
+    SQLMAP FOR release_year NULLABLE
+    SQLMAP FOR original_language_id NULLABLE
+    SQLMAP FOR length NULLABLE
+    SQLMAP FOR rating NULLABLE
+    SQLMAP FOR description NULLABLE
+    SQLMAP FOR special_features NULLABLE
+;
+CLASS .Film_Category TABLE film_category
+    VIRTUAL_ATTRIB last_update ATTRIB_TYPE java.sql.Timestamp
+    VIRTUAL_ATTRIB film_id ATTRIB_TYPE short
+    VIRTUAL_ATTRIB category_id ATTRIB_TYPE short
+    PRIMARY_KEY film_id category_id 
+;
+CLASS .Film_Actor TABLE film_actor
+    VIRTUAL_ATTRIB last_update ATTRIB_TYPE java.sql.Timestamp
+    VIRTUAL_ATTRIB film_id ATTRIB_TYPE short
+    VIRTUAL_ATTRIB actor_id ATTRIB_TYPE short
+    PRIMARY_KEY actor_id film_id 
+    SQLMAP FOR last_update NULLABLE
+;
+COLLECTION_CLASS .ListFilm_Category COLLECTION_TYPE ARRAY ELEMENT_CLASS .Film_Category ELEMENT_TABLE film_category
+    PRIMARY_KEY film_id 
+;

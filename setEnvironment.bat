@@ -1,0 +1,1 @@
+set classpath=.;.\bin;.\config;%JX_HOME%\config;%JX_HOME%\libs\jxclasses.jar;%JX_HOME%\libs\jdxtools.jar;%JX_HOME%\external_libs\json-20240303.jar;c:\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39-bin.jar

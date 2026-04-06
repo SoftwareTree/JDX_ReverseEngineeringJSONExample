@@ -1,1 +1,1 @@
-set classpath=.;.\bin;.\config;%JX_HOME%\config;%JX_HOME%\libs\jxclasses.jar;%JX_HOME%\libs\jdxtools.jar;%JX_HOME%\external_libs\json-20240303.jar;c:\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39-bin.jar
+set classpath=.\bin;.\config;%JX_HOME%\config;%JX_HOME%\libs\jxclasses.jar;%JX_HOME%\libs\jdxtools.jar;%JX_HOME%\external_libs\json-20240303.jar;%JX_HOME%\external_libs\sqlite-jdbc-3.50.3.0.jar;%JX_HOME%\external_libs\mysql-connector-j-8.0.33.jar

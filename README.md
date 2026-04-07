@@ -58,7 +58,7 @@ JDX_ReverseEngineeringJSONExample/
 3. **MySQL JDBC Driver:**
    The example uses MySQL Connector/J. Update the path in `setEnvironment.bat` to match your local MySQL JDBC driver location. The current configuration references:
    ```
-   c:\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39-bin.jar
+   %JX_HOME%\external_libs\\mysql-connector-j-8.0.33.jar
    ```
    Adjust this path as needed for your environment.
 
